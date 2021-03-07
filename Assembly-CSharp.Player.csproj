@@ -661,7 +661,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AbstractSingleton.cs" />
+    <Compile Include="Assets\FiniteStateMachine\AllStates.cs" />
+    <Compile Include="Assets\FiniteStateMachine\BaseState.cs" />
+    <Compile Include="Assets\FiniteStateMachine\FSM.cs" />
     <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\Test.cs" />
+    <Compile Include="Assets\TestController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\素材\PFantasy_SET1_v1.0\public-license.txt" />

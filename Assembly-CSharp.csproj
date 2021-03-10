@@ -65,9 +65,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AbstractSingleton.cs" />
+    <Compile Include="Assets\FSM\FSMBase.cs" />
+    <Compile Include="Assets\FSM\Hero\Hero_FSM.cs" />
+    <Compile Include="Assets\FSM\Hero\Hero_Parameter.cs" />
+    <Compile Include="Assets\FSM\Hero\Hero_States.cs" />
+    <Compile Include="Assets\FSM\MonoSingleton.cs" />
+    <Compile Include="Assets\FSM\ParamBase.cs" />
+    <Compile Include="Assets\FSM\StateBase.cs" />
     <Compile Include="Assets\FiniteStateMachine\AllStates.cs" />
     <Compile Include="Assets\FiniteStateMachine\BaseState.cs" />
     <Compile Include="Assets\FiniteStateMachine\FSM.cs" />
+    <Compile Include="Assets\FiniteStateMachine\HeroRunState.cs" />
+    <Compile Include="Assets\FiniteStateMachine\myBaseClass.cs" />
+    <Compile Include="Assets\FiniteStateMachine\myFSM.cs" />
+    <Compile Include="Assets\FiniteStateMachine\notebook.cs" />
     <Compile Include="Assets\PlayerController.cs" />
     <Compile Include="Assets\Test.cs" />
     <Compile Include="Assets\TestController.cs" />

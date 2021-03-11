@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * 实现挂载对象的通用函数(类似Util)
+ */
+
 public class Hero_FSM : FSMBase
 {
     /*
@@ -13,8 +17,8 @@ public class Hero_FSM : FSMBase
      * TODO：暂时这样写，没有想到如何强制派生类给基类传变量
      */
 
-    private void Awake()
+    private void Start()
     {
-        base.Init(parameter);
+        base.Init(Hero_States.IdleState.Instance, parameter);
     }
 }

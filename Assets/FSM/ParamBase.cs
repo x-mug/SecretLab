@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using UnityEngine;
 /*
  * 使得参数类可在Unity编辑器中可见
  */

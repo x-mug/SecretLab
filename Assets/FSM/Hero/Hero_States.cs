@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,33 +9,16 @@ using UnityEngine;
 
 public class Hero_States
 {
-    public class IdleState : StateBase
+    public class IdleState : StateBase<IdleState>
     {
-        private static IdleState _instance;
-        private static readonly object _synclock = new object();
-        public static IdleState Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    lock (_synclock)
-                        if (_instance == null)
-                        {
-                            _instance = new IdleState();
-                        }
-                return _instance;
-            }
-            private set { }
-        }
-
         public override void OnEnter(FSMBase fsm, ParamBase param)
         {
-            ((Hero_Parameter)param).anim.Play("Player_Run");
+            ((Hero_Parameter)param).anim.Play("Player_Idle");
         }
 
-        public override StateBase HandleInput(FSMBase fsm, ParamBase param)
+        public override void HandleInput(FSMBase fsm, ParamBase param)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void OnExit(FSMBase fsm, ParamBase param)

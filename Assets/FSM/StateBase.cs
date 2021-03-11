@@ -14,8 +14,36 @@ using UnityEngine;
  * OnExit函数中定义指定对象离开并切换状态时的清理动作（类似析构函数，不过不会删除状态本身，但是会清除一些冗余）
  */
 
-public abstract class StateBase
+public abstract class StateBase<T> where T : class, new ()
 {
+    private static T _instance;
+    // 用于lock块的对象
+    private static readonly object _synclock = new object();
+
+    public static T Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                lock (_synclock)
+                {
+                    if (_instance == null)
+                    {
+                        // 若T class具有私有构造函数,那么则无法使用SingletonProvider<T>来实例化new T();
+                        _instance = new T();
+                    }
+                }
+            }
+            return _instance;
+        }
+        // 允许外界重置单例
+        // set { _instance = value; }
+
+        // 禁止外界重置单例
+        private set { }
+    }
+
     /* 
      * 作为状态基类，应指明所有状态均需要处理输入
      * 所有状态均需要编写输入判断，指明下一个状态
@@ -23,7 +51,7 @@ public abstract class StateBase
 
     public abstract void OnEnter(FSMBase fsm, ParamBase param);
 
-    public abstract StateBase HandleInput(FSMBase fsm, ParamBase param);
+    public abstract void HandleInput(FSMBase fsm, ParamBase param);
 
     public abstract void OnExit(FSMBase fsm, ParamBase param);
 

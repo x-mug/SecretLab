@@ -21,4 +21,21 @@ public class HeroFSM : FSMBase
     {
         base.Init(HeroStates.idleState, parameter);
     }
+
+    private void Update()
+    {
+        /*
+         * 持续检测AnyState
+        */
+
+        HeroStates.anyState.HandleInput(this);
+        HeroStates.anyState.OnUpdate(this);
+
+        base.OnUpdate();
+    }
+
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
+    }
 }

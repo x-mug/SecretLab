@@ -26,7 +26,7 @@ public abstract class FSMBase : MonoBehaviour
         TransactionState(defaultState);
     }
 
-    private void Update()
+    public void OnUpdate()
     {
         /* 
          * 持续处理Input与状态本身的update

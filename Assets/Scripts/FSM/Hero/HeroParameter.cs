@@ -14,6 +14,9 @@ public class HeroParameter : ParamBase
     public float mp;
     public float speedScale;
     public float jumpScale;
+    public int jumpLimit;
+    [HideInInspector]
+    public int jumpTimes;
 
     /*
      * 获取一些必要的组件
